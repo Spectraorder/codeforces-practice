@@ -1,7 +1,13 @@
 # CodeForces Practice
 **Problems are shown in time order:**
 
-## 2023/7/16 [1710E Two Array](https://codeforces.com/problemset/problem/1710/E): [IDEA Project](Solutions/TwoArray)
+[2023/7/16](#2023/7/16) [2023/7/23]()
+
+## 2023/7/23 [1837F Editorial for Two](https://codeforces.com/problemset/problem/1837/F): [IDEA Project](Solutions/EditorialforTwo)
+
+
+
+## 2023/7/16<a id="2023/7/16"></a> [1710E Two Array](https://codeforces.com/problemset/problem/1710/E): [IDEA Project](Solutions/TwoArray)
 
 The key ideas:
 
@@ -29,3 +35,13 @@ Optimization:
 
 - As we sweep, we can decrement j and adjust sm when db[j] no longer intersects.
 - This optimizes the number of steps rather than checking every pair.
+
+Time Complexity:
+
+* O(NlogN + MlogM)
+
+Space Complexity:
+
+* O(N + M)
+
+In summary, we sweep vertically while tracking da[] and db[] to incrementally compute the optimal f1 and f2 values. The full implementation handles all the edge cases.
