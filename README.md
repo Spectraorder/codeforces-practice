@@ -1,11 +1,48 @@
 # CodeForces Practice
 **Problems are shown in time order:**
 
-[2023/7/16](#2023/7/16) [2023/7/23]()
+[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23)
 
-## 2023/7/23 [1837F Editorial for Two](https://codeforces.com/problemset/problem/1837/F): [IDEA Project](Solutions/EditorialforTwo)
+## 2023/7/23<a id="2023/7/23"></a> [1837F Editorial for Two](https://codeforces.com/problemset/problem/1837/F): [IDEA Project](Solutions/EditorialforTwo)
 
+The key ideas:
 
+* We want to find the minimum maximum time needed to partition the array into 2 groups of size k. 
+* To do this, we find the k smallest elements using a PriorityQueue.
+* We store these k elements in minK[]. 
+* We try all partitions of minK[] into 2 groups and take the min of the max times.
+
+Initializing:
+
+* We take input n, k, and array a[].
+* We call getMinK() to find the k smallest elements in a[] using a PriorityQueue.
+* This returns minK[], containing the k smallest elements of a[].
+
+Sweeping: 
+
+* We try all possible partitions of minK[] into 2 groups of sizes i and k-i.
+* We compute the total time pTime for the first group of size i. 
+* We compute the total time mTime for the second group of size k-i.
+* We take the max of pTime and mTime.
+* We minimize over all possible partitions. 
+
+Optimization:
+
+* By using a PriorityQueue, we find the k smallest elements in O(N) time. This is faster than sorting the entire array.
+
+Time Complexity:  
+
+* O(N + k^2)
+
+  Finding k smallest elements is O(N) using PriorityQueue. Checking partitions is O(k^2).
+
+Space Complexity:
+
+* O(N)
+
+  PriorityQueue and minK[] use O(N) space.
+
+In summary, we use a PriorityQueue to find the k smallest elements, and efficiently partition them to minimize the maximum time needed. The full implementation handles all cases.
 
 ## 2023/7/16<a id="2023/7/16"></a> [1710E Two Array](https://codeforces.com/problemset/problem/1710/E): [IDEA Project](Solutions/TwoArray)
 
