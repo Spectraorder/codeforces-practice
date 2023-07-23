@@ -40,11 +40,15 @@ public class EditorialforTwo {
 
     public static long[] getMinK(long[] arr, int k) {
         long[] minK = new long[k];
-        long[] temp = arr.clone();
-        Arrays.sort(temp);
+//        long[] temp = arr.clone();
+//        Arrays.sort(temp);
+        PriorityQueue<Long> all = new PriorityQueue<>();
+        for(long cur : arr){
+            all.add(cur);
+        }
         PriorityQueue<Long> pq = new PriorityQueue<>();
-        for (int i = 0; i < k; i++) {
-            pq.add(temp[i]);
+        for(int i=0;i<k;i++){
+            pq.add(all.poll());
         }
         int pos = 0;
         for (long cur : arr) {
