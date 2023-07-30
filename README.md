@@ -1,7 +1,42 @@
 # CodeForces Practice
 **Problems are shown in time order:**
 
-[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23)
+[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23)[2023/7/30](#2023/7/30)
+
+## 2023/7/30<a id="2023/7/30"></a> [1809E Two Tanks](https://codeforces.com/problemset/problem/1809/E): [IDEA Project](Solutions/TwoTanks)
+
+The key ideas:
+
+- We want to find the maximum volume of water in tank 1 after performing all pouring operations, for all possible starting volumes.
+- We simulate pouring operations to calculate final volume for each starting configuration.
+- We store the final volumes in a 2D array ans[][] indexed by starting volumes.
+
+Initializing:
+
+- We take input n, a, b for number of operations, and tank capacities.
+- We initialize `ans[a+1][b+1]` to store final volumes for each starting c, d.
+
+Simulating:
+
+- We loop through each possible total starting volume cd from 0 to a+b.
+- For each cd, we calculate possible starting range l to r in tank 1.
+- We apply all pouring operations vi to simulate pouring.
+- We update `ans[c][d]` with final volume after pouring.
+
+Optimization:
+
+- By simulating the pouring, we directly calculate the final volume for each case.
+- We avoid unnecessary work by precomputing for all starting points.
+
+Time Complexity:
+
+- O(AB) to simulate all starting volumes.
+
+Space Complexity:
+
+- O(AB) for the ans array.
+
+In summary, we simulate pouring for all starting volumes and record the final volumes in ans[][] for querying later. This avoids re-simulating and gives us O(1) lookup.
 
 ## 2023/7/23<a id="2023/7/23"></a> [1837F Editorial for Two](https://codeforces.com/problemset/problem/1837/F): [IDEA Project](Solutions/EditorialforTwo)
 
@@ -82,3 +117,5 @@ Space Complexity:
 * O(N + M)
 
 In summary, we sweep vertically while tracking da[] and db[] to incrementally compute the optimal f1 and f2 values. The full implementation handles all the edge cases.
+
+[d]: 
