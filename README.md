@@ -1,7 +1,58 @@
 # CodeForces Practice
 **Problems are shown in time order:**
 
-[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23)[2023/7/30](#2023/7/30)
+[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23) [2023/7/30](#2023/7/30) [2023/8/6](#2023/8/6) 
+
+## 2023/8/6<a id="2023/8/6"></a>
+
+### [1782E Rectangle Shrinking](https://codeforces.com/contest/1782/problem/E): [IDEA Project](Solutions/RectangleShrinking)
+
+The key ideas:
+
+- We are given a grid with n rectangles placed on it.
+- We want to replace/remove rectangles to maximize area covered without overlaps.
+
+Input:
+
+- Read in number of test cases t.
+- For each test case, read number of rectangles n.
+- Read rectangle corners r1, c1, r2, c2 for each rectangle.
+
+Sorting:
+
+- Sort rectangles by left x coordinate c1.
+
+Dynamic Programming:
+
+- Use treeset s to track rightmost x coord of rectangles seen.
+- Iterate rectangles in sorted order.
+- Update ans with area gained by shrinking/removing.
+- Update p1, p2 to track vertical constraints.
+- Add rectangle right x coord to s if keeping rectangle.
+
+Output:
+
+- Print out maximum area ans.
+- Print final rectangle coordinates after modifications.
+
+Optimizations:
+
+- Sorting by x coord allows incremental tracking of area.
+- Treeset gives logN remove and add.
+
+Time Complexity:
+
+- O(N log N) for sorting rectangles
+- O(N log N) for treeset operations
+- Overall O(N log N)
+
+Space Complexity:
+
+- O(N) for rectangle coordinate arrays
+- O(N) for treeset
+- O(N) overall
+
+In summary, we sort, use DP with a treeset to optimize rectangles left to right, maximizing area covered. This gives an overall O(N log N) solution.
 
 ## 2023/7/30<a id="2023/7/30"></a> [1809E Two Tanks](https://codeforces.com/problemset/problem/1809/E): [IDEA Project](Solutions/TwoTanks)
 
