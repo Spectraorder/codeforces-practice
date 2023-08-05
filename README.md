@@ -54,6 +54,50 @@ Space Complexity:
 
 In summary, we sort, use DP with a treeset to optimize rectangles left to right, maximizing area covered. This gives an overall O(N log N) solution.
 
+### [1817C Similar Polynomials](https://codeforces.com/problemset/problem/1817/C): [IDEA Project](Solutions/SimilarPolynomials)
+
+The key ideas:
+
+- We are given two polynomials A(x) and B(x) of degree d.
+- We want to find integer shift s such that B(x) = A(x+s) modulo 1000000007.
+
+Input:
+
+- Read in degree d.
+- Read coefficients of A(x) from degree 0 to d.
+- Read coefficients of B(x) from degree 0 to d.
+
+Preprocessing:
+
+- Define Modular class for modulo arithmetic.
+- Precompute factorials F[] and reversed factorials RF[].
+
+Lagrange Interpolation:
+
+- Compute coefficients c_i for x^d and x^(d-1) terms of A(x) and B(x).
+- Find leading coefficient k from x^d terms.
+- Compute shift s from x^(d-1) terms and leading coefficient k.
+
+Output:
+
+- Print the computed shift s.
+
+Optimizations:
+
+- Modular class allows easy modulo operations.
+- Precomputed factorials give O(1) access.
+
+Time Complexity:
+
+- O(d) to compute s from coefficients.
+
+Space Complexity:
+
+- O(d) for F[], RF[] arrays.
+- O(1) extra space needed.
+
+In summary, we use Lagrange interpolation with modulo arithmetic to find the polynomial shift in linear time and constant space. Precomputing factorials optimizes modular inverse operations.
+
 ## 2023/7/30<a id="2023/7/30"></a> [1809E Two Tanks](https://codeforces.com/problemset/problem/1809/E): [IDEA Project](Solutions/TwoTanks)
 
 The key ideas:
