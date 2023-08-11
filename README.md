@@ -1,4 +1,4 @@
-# CodeForces Practice
+# ICPC OTCP Masterclass
 **Problems are shown in time order:**
 
 [2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23) [2023/7/30](#2023/7/30) [2023/8/6](#2023/8/6) [2023/8/13](#2023/8/13) 
@@ -26,13 +26,13 @@ Z-algorithm:
 
 - For each pos, reverse s[0..pos] and concat with reversed t after #
 - Call zf() to get Z values - longest prefix/suffix match lengths
-- z[i] stores LCP length of reversed strings
+- z[i] stores LCP (Longest Common Prefix) length of reversed strings
 
 Dynamic Programming:
 
 - Try all pos and suf lengths
 - Cost is prefix transform cost + suffix transform cost
-- Prefix cost uses LCP values from Z array
+- Prefix cost uses LCP (Longest Common Prefix) values from Z array
 - Minimize overall cost
 
 Output:
@@ -198,7 +198,9 @@ Space Complexity:
 
 In summary, we use Lagrange interpolation with modulo arithmetic to find the polynomial shift in linear time and constant space. Precomputing factorials optimizes modular inverse operations.
 
-## 2023/7/30<a id="2023/7/30"></a> [1809E Two Tanks](https://codeforces.com/problemset/problem/1809/E): [IDEA Project](Solutions/TwoTanks)
+## 2023/7/30<a id="2023/7/30"></a> 
+
+### [1809E Two Tanks](https://codeforces.com/problemset/problem/1809/E): [IDEA Project](Solutions/TwoTanks)
 
 The key ideas:
 
@@ -233,7 +235,9 @@ Space Complexity:
 
 In summary, we simulate pouring for all starting volumes and record the final volumes in ans[][] for querying later. This avoids re-simulating and gives us O(1) lookup.
 
-## 2023/7/23<a id="2023/7/23"></a> [1837F Editorial for Two](https://codeforces.com/problemset/problem/1837/F): [IDEA Project](Solutions/EditorialforTwo)
+## 2023/7/23<a id="2023/7/23"></a> 
+
+### [1837F Editorial for Two](https://codeforces.com/problemset/problem/1837/F): [IDEA Project](Solutions/EditorialforTwo)
 
 The key ideas:
 
@@ -274,7 +278,9 @@ Space Complexity:
 
 In summary, we use a PriorityQueue to find the k smallest elements, and efficiently partition them to minimize the maximum time needed. The full implementation handles all cases.
 
-## 2023/7/16<a id="2023/7/16"></a> [1710E Two Array](https://codeforces.com/problemset/problem/1710/E): [IDEA Project](Solutions/TwoArray)
+## 2023/7/16<a id="2023/7/16"></a> 
+
+### [1710E Two Array](https://codeforces.com/problemset/problem/1710/E): [IDEA Project](Solutions/TwoArray)
 
 The key ideas:
 
@@ -312,5 +318,3 @@ Space Complexity:
 * O(N + M)
 
 In summary, we sweep vertically while tracking da[] and db[] to incrementally compute the optimal f1 and f2 values. The full implementation handles all the edge cases.
-
-[d]: 
