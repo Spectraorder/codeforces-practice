@@ -1,7 +1,64 @@
 # CodeForces Practice
 **Problems are shown in time order:**
 
-[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23) [2023/7/30](#2023/7/30) [2023/8/6](#2023/8/6) 
+[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23) [2023/7/30](#2023/7/30) [2023/8/6](#2023/8/6) [2023/8/13](#2023/8/13) 
+
+## 2023/8/13<a id="2023/8/13"></a>
+
+### [1701E Text Editor](https://codeforces.com/problemset/problem/1701/E): [IDEA Project](Solutions/TextEditor)
+
+The key ideas:
+
+- We are given two strings s and t, and want to convert s to t with minimum moves
+- Can use left, right, home, end, backspace buttons
+
+Input:
+
+- Read number of test cases T
+- For each case, read lengths n and m of s and t
+- Read strings s and t
+
+Preprocessing:
+
+- Use greedy approach to populate lpos[] and rpos[] arrays with valid leftmost and rightmost match positions for suffixes of t in s
+
+Z-algorithm:
+
+- For each pos, reverse s[0..pos] and concat with reversed t after #
+- Call zf() to get Z values - longest prefix/suffix match lengths
+- z[i] stores LCP length of reversed strings
+
+Dynamic Programming:
+
+- Try all pos and suf lengths
+- Cost is prefix transform cost + suffix transform cost
+- Prefix cost uses LCP values from Z array
+- Minimize overall cost
+
+Output:
+
+- Print minimum number of moves
+- Or -1 if not possible
+
+Optimizations:
+
+- Greedy lpos[] and rpos[] allow quick pruning of invalid pos/suf pairs
+- Z-algorithm gives LCP values in O(N) time
+
+Time Complexity:
+
+- O(N^2) evaluating all pos and suf pairs
+- O(N) for Z array per test case
+- Total O(T*N^2)
+
+Space Complexity:
+
+- O(N) for lpos[], rpos[]
+- O(N) for Z array
+- O(N) per test case
+- O(T*N) total
+
+In summary, we use Z algorithm and DP with greedy preprocessing to minimize moves needed to transform s to t efficiently.
 
 ## 2023/8/6<a id="2023/8/6"></a>
 
