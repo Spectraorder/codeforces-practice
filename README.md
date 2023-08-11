@@ -60,6 +60,49 @@ Space Complexity:
 
 In summary, we use Z algorithm and DP with greedy preprocessing to minimize moves needed to transform s to t efficiently.
 
+### [1730E Maximums and Minimums](https://codeforces.com/problemset/problem/1730/E): [IDEA Project](Solutions/MaximumsandMinimums)
+
+The key ideas:
+
+- Given an array of n positive integers, find pairs (l,r) that pass the min/max divisibility check
+- Use stacks to compute nearest left/right greater/lower values in O(n)
+- Iterate over leftmost max positions and their divisors
+- Count valid segments based on overlap of boundary conditions
+
+Input:
+
+- Number of test cases t
+- For each case, size of array n and the array
+
+Preprocessing:
+
+- Compute grLf[], grRg[], lessLf[], lessRg[] arrays using stacks in O(n)
+- Compute divs[] array of divisors for numbers 1 to A in O(AlogA)
+
+Main logic:
+
+- Iterate over array indices i and divisors d of a[i]
+- Use grLf[], grRg[] etc to count valid (l,r) segments with a[i] max and d min
+- Add up counts over all i, d pairs
+
+Output:
+
+- Print total counts of valid pairs for each test case
+
+Optimizations:
+
+- Use stacks for O(n) preprocessing
+- Precompute divisors allows O(1) divisor queries
+
+Complexity:
+
+- O(AlogA + nD) per test case
+- O(T(AlogA + nD)) overall
+
+Space: O(A + n) per test case
+
+In summary, uses stacks, precomputation, and boundary pruning to count valid pairs efficiently.
+
 ## 2023/8/6<a id="2023/8/6"></a>
 
 ### [1782E Rectangle Shrinking](https://codeforces.com/contest/1782/problem/E): [IDEA Project](Solutions/RectangleShrinking)
