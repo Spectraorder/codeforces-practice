@@ -1,7 +1,52 @@
 # ICPC OTCP Masterclass
 **Problems are shown in time order:**
 
-[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23) [2023/7/30](#2023/7/30) [2023/8/6](#2023/8/6) [2023/8/13](#2023/8/13) 
+[2023/7/16](#2023/7/16) [2023/7/23](#2023/7/23) [2023/7/30](#2023/7/30) [2023/8/6](#2023/8/6) [2023/8/13](#2023/8/13) [2023/8/20](#2023/8/20) 
+
+## 2023/8/20<a id="2023/8/20"></a>
+
+### [1725K Kingdom of Criticism](https://codeforces.com/problemset/problem/1725/K): [IDEA Project](Solutions/KingdomofCriticism)
+
+The key ideas:
+
+- We are given initial heights of N buildings
+- Queries to change height, get height, or apply criticism
+- Must change heights to satisfy criticism in minimum time
+
+Input:
+
+- Read N, the number of buildings
+- Read initial heights array buildings[]
+- Read Q, the number of queries
+- Process each query:
+  - Type 1: change height
+  - Type 2: get height
+  - Type 3: apply criticism
+
+Preprocessing:
+
+- Store building heights in array buildings[]
+- Use HashMap heightsToIndices to map heights to indices
+
+Applying Queries:
+
+- Type 1: Update buildings[] and heightsToIndices
+- Type 2: Print height from buildings[]
+- Type 3: Update heights just outside criticism range using heightsToIndices
+
+Time Complexity:
+
+- O(Q) to process all queries
+- O(N) per criticism to update heights
+- Total O(Q + N*C) where C is number of criticisms
+
+Space Complexity:
+
+- O(N) for buildings[]
+- O(N) for heightsToIndices
+- O(1) additional per query
+
+In summary, we store building data in array and map, allowing efficient queries and height updates to satisfy criticisms.
 
 ## 2023/8/13<a id="2023/8/13"></a>
 
