@@ -48,6 +48,48 @@ Space Complexity:
 
 In summary, we store building data in array and map, allowing efficient queries and height updates to satisfy criticisms.
 
+### [1685C Bring Balance](https://codeforces.com/contest/1685/problem/C): [IDEA Project](Solutions/BringBalance)
+
+The key ideas:
+
+- We are given a bracket sequence of length 2n
+- We want to make it balanced using minimum reverse operations
+
+Input:
+
+- Read n, the number of pairs of brackets
+- Read the bracket sequence str
+
+Preprocessing:
+
+- Use left and right counters to track unmatched '(' and ')'
+- Use interval deque to store reverse operations
+
+Applying Operations:
+
+- Scan str and flip substrings when left/right becomes negative
+- Add reverse interval to deque
+- Try to combine adjacent intervals to minimize operations
+
+Checking Balance:
+
+- Combine intervals if remaining substring in between is balanced
+- Otherwise, split intervals back apart
+
+Time Complexity:
+
+- O(n) to scan string
+- O(n) to combine intervals
+- Total O(n)
+
+Space Complexity:
+
+- O(n) for left/right counters
+- O(n) for interval deque
+- O(1) additional space
+
+In summary, we scan string to find reverses, combine intervals, and output minimum set of reverse operations to balance the brackets.
+
 ## 2023/8/13<a id="2023/8/13"></a>
 
 ### [1701E Text Editor](https://codeforces.com/problemset/problem/1701/E): [IDEA Project](Solutions/TextEditor)
